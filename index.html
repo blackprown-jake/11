@@ -1,106 +1,16 @@
-/* ==========================================================================
-   FLOFIL — global styles
-   Brand typeface (Wanted Sans) + Pretendard fallback from CDN, the Wanted
-   Design System tokens resolved to concrete values, and the type ramp as
-   .wt-* utility classes. Tailwind layers are imported first so these win.
-   ========================================================================== */
-
-@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.4/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  /* Brand / primary */
-  --wt-primary: rgb(0, 102, 255);
-  --wt-primary-strong: rgb(0, 94, 235);
-  --wt-primary-heavy: rgb(0, 84, 209);
-  --wt-primary-bg: rgb(234, 242, 254);
-
-  /* Text / label */
-  --wt-text: rgb(23, 23, 23);
-  --wt-text-neutral: rgba(46, 47, 51, 0.88);
-  --wt-text-alt: rgba(55, 56, 60, 0.61);
-  --wt-text-assistive: rgba(55, 56, 60, 0.28);
-  --wt-text-disabled: rgba(55, 56, 60, 0.16);
-
-  /* Surfaces */
-  --wt-bg: rgb(255, 255, 255);
-  --wt-bg-alt: rgb(247, 248, 249);
-  --wt-bg-elevated: rgb(255, 255, 255);
-
-  /* Lines / fills */
-  --wt-border: rgba(112, 115, 124, 0.22);
-  --wt-border-solid: rgba(112, 115, 124, 0.4);
-  --wt-fill: rgba(112, 115, 124, 0.08);
-
-  /* Status */
-  --wt-positive: rgb(0, 191, 64);
-  --wt-negative: rgb(255, 66, 66);
-
-  /* Static */
-  --wt-static-white: rgb(255, 255, 255);
-
-  /* Accents (foreground + background pairs) */
-  --wt-accent-violet: rgb(91, 55, 237);
-  --wt-accent-violet-bg: rgb(101, 65, 242);
-  --wt-accent-cyan: rgb(0, 152, 178);
-  --wt-accent-cyan-bg: rgb(0, 189, 222);
-
-  /* Font stack */
-  --font-sans: "Wanted Sans Variable", "Wanted Sans", "Pretendard Variable",
-    Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
-  /* Type ramp (size · line-height · tracking · weight) */
-  --display1-size: 56px;   --display1-line: 1.286; --display1-tracking: -0.032em; --display1-weight: 700;
-  --title1-size: 36px;     --title1-line: 1.334;   --title1-tracking: -0.027em;   --title1-weight: 700;
-  --title3-size: 24px;     --title3-line: 1.334;   --title3-tracking: -0.012em;   --title3-weight: 700;
-  --heading1-size: 22px;   --heading1-line: 1.364; --heading1-tracking: -0.011em; --heading1-weight: 700;
-  --heading2-size: 20px;   --heading2-line: 1.400; --heading2-tracking: -0.010em; --heading2-weight: 700;
-  --headline1-size: 18px;  --headline1-line: 1.444; --headline1-tracking: -0.002em; --headline1-weight: 600;
-  --body1-size: 16px;      --body1-line: 1.500;    --body1-tracking: 0.0057em;    --body1-weight: 400;
-  --body1-reading-line: 1.625;
-  --body2-size: 15px;      --body2-line: 1.467;    --body2-tracking: 0.0096em;    --body2-weight: 400;
-  --label1-size: 14px;     --label1-line: 1.429;   --label1-tracking: 0.0145em;   --label1-weight: 600;
-  --label2-size: 13px;     --label2-line: 1.385;   --label2-tracking: 0.0194em;   --label2-weight: 600;
-  --caption1-size: 12px;   --caption1-line: 1.334; --caption1-tracking: 0.0252em; --caption1-weight: 500;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--wt-bg);
-  color: var(--wt-text);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a { color: inherit; }
-
-/* Type utility classes ----------------------------------------------------- */
-.wt-display1, .wt-title1, .wt-title3,
-.wt-heading1, .wt-heading2, .wt-headline1,
-.wt-body1, .wt-body1-reading, .wt-body2,
-.wt-label1, .wt-label2, .wt-caption1 {
-  font-family: var(--font-sans);
-  margin: 0;
-  color: var(--wt-text);
-}
-
-.wt-display1 { font-size: var(--display1-size); line-height: var(--display1-line); letter-spacing: var(--display1-tracking); font-weight: var(--display1-weight); }
-.wt-title1 { font-size: var(--title1-size); line-height: var(--title1-line); letter-spacing: var(--title1-tracking); font-weight: var(--title1-weight); }
-.wt-title3 { font-size: var(--title3-size); line-height: var(--title3-line); letter-spacing: var(--title3-tracking); font-weight: var(--title3-weight); }
-.wt-heading1 { font-size: var(--heading1-size); line-height: var(--heading1-line); letter-spacing: var(--heading1-tracking); font-weight: var(--heading1-weight); }
-.wt-heading2 { font-size: var(--heading2-size); line-height: var(--heading2-line); letter-spacing: var(--heading2-tracking); font-weight: var(--heading2-weight); }
-.wt-headline1 { font-size: var(--headline1-size); line-height: var(--headline1-line); letter-spacing: var(--headline1-tracking); font-weight: var(--headline1-weight); }
-.wt-body1 { font-size: var(--body1-size); line-height: var(--body1-line); letter-spacing: var(--body1-tracking); font-weight: var(--body1-weight); }
-.wt-body1-reading { font-size: var(--body1-size); line-height: var(--body1-reading-line); letter-spacing: var(--body1-tracking); font-weight: var(--body1-weight); }
-.wt-body2 { font-size: var(--body2-size); line-height: var(--body2-line); letter-spacing: var(--body2-tracking); font-weight: var(--body2-weight); }
-.wt-label1 { font-size: var(--label1-size); line-height: var(--label1-line); letter-spacing: var(--label1-tracking); font-weight: var(--label1-weight); }
-.wt-label2 { font-size: var(--label2-size); line-height: var(--label2-line); letter-spacing: var(--label2-tracking); font-weight: var(--label2-weight); }
-.wt-caption1 { font-size: var(--caption1-size); line-height: var(--caption1-line); letter-spacing: var(--caption1-tracking); font-weight: var(--caption1-weight); }
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLOFIL — 바이오메디컬 특수 필름</title>
+    <meta
+      name="description"
+      content="FLOFIL — 진단 센서·라벨·웨어러블을 위한 고성능 폴리머 기반 바이오메디컬 특수 필름. OCTUD 브랜드."
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
