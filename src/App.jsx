@@ -31,14 +31,36 @@ function Eyebrow({ children }) {
 
 function Wordmark() {
   return (
-    <div className="flex items-center gap-[10px] select-none">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-        <rect x="0.5" y="0.5" width="21" height="21" rx="6" fill="var(--wt-primary)" />
-        <path d="M7 6.5h8M7 11h8M7 15.5h5" stroke="white" strokeWidth="1.7" strokeLinecap="round" />
+    <div className="flex items-center select-none" style={{ height: "32px" }}>
+      <svg viewBox="0 0 490 120" style={{ height: "100%", width: "auto" }} aria-hidden="true">
+        <g fill="var(--wt-text)">
+          {/* F */}
+          <rect x="10" y="20" width="14" height="85" />
+          <rect x="24" y="20" width="42" height="14" />
+          <rect x="24" y="55" width="32" height="14" />
+          
+          {/* L */}
+          <rect x="90" y="20" width="14" height="85" />
+          <rect x="104" y="91" width="38" height="14" />
+          
+          {/* O */}
+          <path d="M 205 20 A 42.5 42.5 0 0 1 205 105 A 42.5 42.5 0 0 1 205 20 Z M 205 34 A 28.5 28.5 0 0 0 205 91 A 28.5 28.5 0 0 0 205 34 Z" fillRule="evenodd" />
+          
+          {/* F */}
+          <rect x="270" y="20" width="14" height="85" />
+          <rect x="284" y="20" width="42" height="14" />
+          <rect x="284" y="55" width="32" height="14" />
+          
+          {/* i */}
+          <rect x="350" y="44" width="14" height="61" />
+          
+          {/* L */}
+          <rect x="390" y="20" width="14" height="85" />
+          <rect x="404" y="91" width="38" height="14" />
+        </g>
+        {/* i의 청록색 점 */}
+        <circle cx="357" cy="27" r="8" fill="#00D2C4" />
       </svg>
-      <span className="wt-heading2" style={{ letterSpacing: "-0.01em" }}>
-        FLOFIL
-      </span>
     </div>
   );
 }
